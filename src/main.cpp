@@ -2,6 +2,7 @@
 #include <Arduino.h>
 
 #include <ESP8266WiFi.h>
+#include "html.h"
 #include "secrets.h"
 /*
     The "secrets.h" header contains secrets in following format
@@ -52,6 +53,9 @@ void loop(){
                       client.println("Content-type:text/html");
                       client.println("Connection: close");
                       client.println();
+                
+                      client.println(html);
+                      
                       client.println();
                       break;
                     } else {
